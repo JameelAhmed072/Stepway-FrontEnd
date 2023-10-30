@@ -5,7 +5,6 @@ function fetchStudentCount() {
         .then(data => {
             const studentCountElement = document.getElementById('studentCount');
             studentCountElement.textContent = data; // Update the content with the fetched number
-            console.log(data)
         })
         
         .catch(error => {
@@ -15,3 +14,20 @@ function fetchStudentCount() {
 
 // Call the function to fetch and update the student count when the page loads
 fetchStudentCount();
+
+function fetchTotalEarning() {
+    fetch('http://localhost:8080/api/earning')
+        .then(response => response.json())
+        
+        .then(data => {
+            const studentCountElement = document.getElementById('earning');
+            studentCountElement.textContent = data; // Update the content with the fetched number
+        })
+        
+        .catch(error => {
+            console.error('Error fetching data: ' + error);
+        });
+}
+
+// Call the function to fetch and update the student count when the page loads
+fetchTotalEarning();
