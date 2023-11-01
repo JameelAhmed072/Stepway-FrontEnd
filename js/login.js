@@ -50,6 +50,7 @@
 //     });
 // });
 
+
 function login() {
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
@@ -70,11 +71,25 @@ function login() {
         
     )
     .then(data => {
-        debugger
         var token = data.accessToken;
         localStorage.setItem("token",token)
+
         if(token){
-            window.location.href = 'index1.html';
+            var a = parseJwt(token);
+
+            
+            const roles = a.ROLES;
+
+            if (roles[0] === "ADMIN") {
+                // Render AdminDashboard.html
+                window.location.href = 'AdminDashboard.html';
+              } else if (roles.includes("STUDENT")) {
+                window.location.href = 'StudentDashboard.html';
+              }else if(roles.includes("TEACHER")){
+                window.location.href = 'TeacherDashboard.html';
+            }else{
+                console.log('User Not Found');
+            }
         }
         else{
             console.log("Token Not Found");
@@ -88,3 +103,12 @@ function login() {
         alert("Login failed. Please check your credentials.");
     });
 }
+
+function parseJwt (token) {
+
+    var base64Url = token.split('.')[1];
+    var base64 = decodeURIComponent(atob(base64Url).split('').map((c)=>{
+        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+    }).join(''));
+    return JSON.parse(base64);
+};

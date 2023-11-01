@@ -1,12 +1,12 @@
-<!doctype html>
-<html class="no-js" lang="">
+<!DOCTYPE html>
+<html lang="en">
 
 
-<!-- Mirrored from www.radiustheme.com/demo/html/psdboss/akkhor/akkhor/map.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 05 Oct 2023 17:31:02 GMT -->
+<!-- Mirrored from www.radiustheme.com/demo/html/psdboss/akkhor/akkhor/index1.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 05 Oct 2023 17:29:38 GMT -->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>STEPWAY | Map</title>
+    <title>STEPWAY   | Teacher Dashboard</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Favicon -->
@@ -21,12 +21,15 @@
     <link rel="stylesheet" href="css/all.min.css">
     <!-- Flaticon CSS -->
     <link rel="stylesheet" href="fonts/flaticon.css">
+    <!-- Full Calender CSS -->
+    <link rel="stylesheet" href="css/fullcalendar.min.css">
     <!-- Animate CSS -->
     <link rel="stylesheet" href="css/animate.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
     <!-- Modernize js -->
-    <script src="js/modernizr-3.6.0.min.js"></script>
+    <script src="js/index1.js"></script>
+    <script src="js/allCoursesData.js"></script>
 </head>
 
 <body>
@@ -34,15 +37,15 @@
     <div id="preloader"></div>
     <!-- Preloader End Here -->
     <div id="wrapper" class="wrapper bg-ash">
-         <!-- Header Menu Area Start Here -->
+       <!-- Header Menu Area Start Here -->
         <div class="navbar navbar-expand-md header-menu-one bg-light">
             <div class="nav-bar-header-one">
                 <div class="header-logo">
-                    <a href="AdminDashboard.html">
+                    <a href="TeacherDashboard.html">
                         <img src="img/logo.png" alt="logo">
                     </a>
                 </div>
-                  <div class="toggle-button sidebar-toggle">
+                 <div class="toggle-button sidebar-toggle">
                     <button type="button" class="item-link">
                         <span class="btn-icon-wrap">
                             <span></span>
@@ -62,16 +65,7 @@
             </div>
             <div class="header-main-menu collapse navbar-collapse" id="mobile-navbar">
                 <ul class="navbar-nav">
-                    <li class="navbar-item header-search-bar">
-                        <div class="input-group stylish-input-group">
-                            <span class="input-group-addon">
-                                <button type="submit">
-                                    <span class="flaticon-search" aria-hidden="true"></span>
-                                </button>
-                            </span>
-                            <input type="text" class="form-control" placeholder="Find Something . . .">
-                        </div>
-                    </li>
+                    
                 </ul>
                 <ul class="navbar-nav">
                     <li class="navbar-item dropdown header-admin">
@@ -79,10 +73,10 @@
                             aria-expanded="false">
                             <div class="admin-title">
                                 <h5 class="item-title">Stevne Zone</h5>
-                                <span>Admin</span>
+                                <span>Teacher</span>
                             </div>
                             <div class="admin-img">
-                                <img src="img/figure/admin.jpg" alt="Admin">
+                                <img src="img/figure/admin.jpg" alt="Teacher">
                             </div>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
@@ -94,7 +88,6 @@
                                     <li><a href="#"><i class="flaticon-user"></i>My Profile</a></li>
                                     <li><a href="#"><i class="flaticon-list"></i>Task</a></li>
                                     <li><a href="#"><i class="flaticon-chat-comment-oval-speech-bubble-with-text-lines"></i>Message</a></li>
-                                    <li><a href="#"><i class="flaticon-gear-loading"></i>Account Settings</a></li>
                                     <li><a href="index.html"><i class="flaticon-turn-off"></i>Log Out</a></li>
                                 </ul>
                             </div>
@@ -234,164 +227,54 @@
         <!-- Page Area Start Here -->
         <div class="dashboard-page-one">
             <!-- Sidebar Area Start Here -->
-           <div class="sidebar-main sidebar-menu-one sidebar-expand-md sidebar-color">
+            <div class="sidebar-main sidebar-menu-one sidebar-expand-md sidebar-color">
                <div class="mobile-sidebar-header d-md-none">
                     <div class="header-logo">
-                        <a href="AdminDashboard.html"><img src="img/logo1.png" alt="logo"></a>
+                        <a href="TeacherDashboard.html"><img src="img/logo1.png" alt="logo"></a>
                     </div>
                </div>
                 <div class="sidebar-menu-content">
                     <ul class="nav nav-sidebar-menu sidebar-toggle-view">
-                        <li class="nav-item sidebar-nav-item">
-                            <a href="#" class="nav-link"><i class="flaticon-dashboard"></i><span>Dashboard</span></a>
-                            <ul class="nav sub-group-menu">
+                        
+                        <li class="nav-item ">
+                            <a href="TeacherDashboard.html" class="nav-link"><i class="flaticon-dashboard"></i><span>Dashboard</span></a>
+                            
+                        </li>
+                        <li class="nav-item ">
+                            <a href="#" class="nav-link"><i class="flaticon-books"></i><span>Classroom</span></a>
+                        </li>                        
+                        <li class="nav-item ">
+                            <a href="#" class="nav-link"><i class="flaticon-books"></i><span>Books</span></a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a href="all-class.html" class="nav-link"><i
+                                    class="flaticon-maths-class-materials-cross-of-a-pencil-and-a-ruler"></i><span>My Courses</span></a>
+                            <!-- <ul class="nav sub-group-menu">
                                 <li class="nav-item">
-                                    <a href="AdminDashboard.html" class="nav-link"><i class="fas fa-angle-right"></i>Admin</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="index3.html" class="nav-link"><i class="fas fa-angle-right"></i>Students</a>
+                                    <a href="all-class.html" class="nav-link"><i class="fas fa-angle-right"></i>My
+                                        Courses</a>
                                 </li>
                                 
-                                <li class="nav-item">
-                                    <a href="index5.html" class="nav-link"><i class="fas fa-angle-right"></i>Teachers</a>
-                                </li>
-                            </ul>
+                            </ul> -->
                         </li>
-                        <li class="nav-item sidebar-nav-item">
-                            <a href="#" class="nav-link"><i class="flaticon-classmates"></i><span>Students</span></a>
-                            <ul class="nav sub-group-menu">
-                                <li class="nav-item">
-                                    <a href="all-student.html" class="nav-link"><i class="fas fa-angle-right"></i>All Students</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="student-details.html" class="nav-link"><i class="fas fa-angle-right"></i>Student Details</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="admit-form.html" class="nav-link"><i class="fas fa-angle-right"></i>Admission Form</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="student-promotion.html" class="nav-link"><i class="fas fa-angle-right"></i>Student Promotion</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item sidebar-nav-item">
-                            <a href="#" class="nav-link"><i class="flaticon-multiple-users-silhouette"></i><span>Teachers</span></a>
-                            <ul class="nav sub-group-menu">
-                                <li class="nav-item">
-                                    <a href="all-teacher.html" class="nav-link"><i class="fas fa-angle-right"></i>All Teachers</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="teacher-details.html" class="nav-link"><i class="fas fa-angle-right"></i>Teacher Details</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="add-teacher.html" class="nav-link"><i class="fas fa-angle-right"></i>Add Teacher</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="teacher-payment.html" class="nav-link"><i class="fas fa-angle-right"></i>Payment</a>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li class="nav-item sidebar-nav-item">
-                            <a href="#" class="nav-link"><i class="flaticon-books"></i><span>Library</span></a>
-                            <ul class="nav sub-group-menu">
-                                <li class="nav-item">
-                                    <a href="all-book.html" class="nav-link"><i class="fas fa-angle-right"></i>All Book</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="add-book.html" class="nav-link"><i class="fas fa-angle-right"></i>Add New Book</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item sidebar-nav-item">
-                            <a href="#" class="nav-link"><i class="flaticon-technological"></i><span>Acconunt</span></a>
-                            <ul class="nav sub-group-menu">
-                                <li class="nav-item">
-                                    <a href="all-fees.html" class="nav-link"><i class="fas fa-angle-right"></i>All Fees Collection</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="all-expense.html" class="nav-link"><i class="fas fa-angle-right"></i>Expenses</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="add-expense.html" class="nav-link"><i class="fas fa-angle-right"></i>Add Expenses</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item sidebar-nav-item">
-                            <a href="#" class="nav-link"><i class="flaticon-maths-class-materials-cross-of-a-pencil-and-a-ruler"></i><span>Class</span></a>
-                            <ul class="nav sub-group-menu">
-                                <li class="nav-item">
-                                    <a href="all-class.html" class="nav-link"><i class="fas fa-angle-right"></i>All Classes</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="add-class.html" class="nav-link"><i class="fas fa-angle-right"></i>Add New Class</a>
-                                </li>
-                            </ul>
+                        
+                        
+                       
+                        
+                        
+                        <li class="nav-item">
+                            <a href="notice-board.html" class="nav-link"><i
+                                    class="flaticon-script"></i><span>Notice Board</span></a>
                         </li>
                         <li class="nav-item">
-                            <a href="all-subject.html" class="nav-link"><i class="flaticon-open-book"></i><span>Subject</span></a>
+                            <a href="messaging.html" class="nav-link"><i
+                                    class="flaticon-chat"></i><span>My Message</span></a>
                         </li>
+                        
                         <li class="nav-item">
-                            <a href="class-routine.html" class="nav-link"><i class="flaticon-calendar"></i><span>Class Routine</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="student-attendence.html" class="nav-link"><i class="flaticon-checklist"></i><span>Attendence</span></a>
-                        </li>
-                        <li class="nav-item sidebar-nav-item">
-                            <a href="#" class="nav-link"><i class="flaticon-shopping-list"></i><span>Exam</span></a>
-                            <ul class="nav sub-group-menu">
-                                <li class="nav-item">
-                                    <a href="exam-schedule.html" class="nav-link"><i class="fas fa-angle-right"></i>Exam Schedule</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="exam-grade.html" class="nav-link"><i class="fas fa-angle-right"></i>Exam Grades</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a href="transport.html" class="nav-link"><i class="flaticon-bus-side-view"></i><span>Transport</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="hostel.html" class="nav-link"><i class="flaticon-bed"></i><span>Hostel</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="notice-board.html" class="nav-link"><i class="flaticon-script"></i><span>Notice</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="messaging.html" class="nav-link"><i class="flaticon-chat"></i><span>Messeage</span></a>
-                        </li>
-                         <li class="nav-item sidebar-nav-item">
-                            <a href="#" class="nav-link"><i class="flaticon-menu-1"></i><span>UI Elements</span></a>
-                            <ul class="nav sub-group-menu">
-                                <li class="nav-item">
-                                    <a href="notification-alart.html" class="nav-link"><i class="fas fa-angle-right"></i>Alart</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="button.html" class="nav-link"><i class="fas fa-angle-right"></i>Button</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="grid.html" class="nav-link"><i class="fas fa-angle-right"></i>Grid</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="modal.html" class="nav-link"><i class="fas fa-angle-right"></i>Modal</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="progress-bar.html" class="nav-link"><i class="fas fa-angle-right"></i>Progress Bar</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="ui-tab.html" class="nav-link"><i class="fas fa-angle-right"></i>Tab</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="ui-widget.html" class="nav-link"><i
-                                            class="fas fa-angle-right"></i>Widget</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a href="map.html" class="nav-link menu-active"><i class="flaticon-planet-earth"></i><span>Map</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="account-settings.html" class="nav-link"><i class="flaticon-settings"></i><span>Account</span></a>
+                            <a href="map.html" class="nav-link"><i
+                                    class="flaticon-planet-earth"></i><span>Map</span></a>
                         </li>
                     </ul>
                 </div>
@@ -400,45 +283,43 @@
             <div class="dashboard-content-one">
                 <!-- Breadcubs Area Start Here -->
                 <div class="breadcrumbs-area">
-                    <h3>Admin Dashboard</h3>
+                    <h3>Teacher Dashboard</h3>
                     <ul>
                         <li>
-                            <a href="AdminDashboard.html">Home</a>
+                            <a href="TeacherDashboard.html">Home</a>
                         </li>
-                        <li>Map</li>
+                        <li>Teacher</li>
                     </ul>
                 </div>
                 <!-- Breadcubs Area End Here -->
-                <!-- Google Map Area Start Here -->
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="card google-map-area">
-                            <div class="card-body">
-                                <div class="heading-layout1">
-                                    <div class="item-title">
-                                        <h3>Marker Map</h3>
-                                    </div>
-                                   <div class="dropdown">
-                                        <a class="dropdown-toggle" href="#" role="button" 
-                                        data-toggle="dropdown" aria-expanded="false">...</a>
-                                        <div class="dropdown-menu dropdown-menu-right">
-                                            <a class="dropdown-item" href="#"><i class="fas fa-times text-orange-red"></i>Close</a>
-                                            <a class="dropdown-item" href="#"><i class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
-                                            <a class="dropdown-item" href="#"><i class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="default-map">
-                                    <div id="markergoogleMap" style="width:100%; height:660px; border-radius: 4px;"></div>
-                                </div>
+                <!-- Dashboard summery Start Here -->
+                
+                <br>
+                <br>
+                <br>
+                <br>
+
+                <div class="welcome-section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 text-center">
+                                <h2>Welcome Teacher!</h2>
+                                <p>Here you can manage your courses, messages, and more.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- Google Map Area End Here -->
+                <br>
+                <br>
+                <br>
+               
+                
+                <!-- Social Media End Here -->
+                <!-- Footer Area Start Here -->
                 <footer class="footer-wrap-layout1">
                     <div class="copyright">© Copyrights <a href="#">Stepway</a> 2023. All rights reserved. Designed by <a href="#">Jameel & Waji</a></div>
                 </footer>
+                <!-- Footer Area End Here -->
             </div>
         </div>
         <!-- Page Area End Here -->
@@ -451,17 +332,23 @@
     <script src="js/popper.min.js"></script>
     <!-- Bootstrap js -->
     <script src="js/bootstrap.min.js"></script>
+    <!-- Counterup Js -->
+    <script src="js/jquery.counterup.min.js"></script>
+    <!-- Moment Js -->
+    <script src="js/moment.min.js"></script>
+    <!-- Waypoints Js -->
+    <script src="js/jquery.waypoints.min.js"></script>
     <!-- Scroll Up Js -->
     <script src="js/jquery.scrollUp.min.js"></script>
-    <!-- Google Map js -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBtmXSwv4YmAKtcZyyad9W7D4AC08z0Rb4"></script>
-    <!-- Map Init js -->
-    <script src="js/google-marker-map.js"></script>
+    <!-- Full Calender Js -->
+    <script src="js/fullcalendar.min.js"></script>
+    <!-- Chart Js -->
+    <script src="js/Chart.min.js"></script>
     <!-- Custom Js -->
     <script src="js/main.js"></script>
 
 </body>
 
 
-<!-- Mirrored from www.radiustheme.com/demo/html/psdboss/akkhor/akkhor/map.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 05 Oct 2023 17:31:03 GMT -->
+<!-- Mirrored from www.radiustheme.com/demo/html/psdboss/akkhor/akkhor/index1.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 05 Oct 2023 17:30:23 GMT -->
 </html>
