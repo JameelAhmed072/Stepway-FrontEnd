@@ -15,7 +15,7 @@ function fetchStudentCount() {
             // Add any other custom headers as needed
           }
     })
-        .then(response => response.json()
+        .then(response => response.text()
         
         )
         .then(data => {
@@ -40,10 +40,10 @@ function fetchTotalEarning() {
             // Add any other custom headers as needed
           }
     })
-        .then(response => response.json())
+        .then(response => response.text())
         
         .then(data => {
-            const studentCountElement = document.getElementById('earning');
+            var studentCountElement = document.getElementById('earning');
             studentCountElement.textContent = data; // Update the content with the fetched number
             // console.log(data);
         })
@@ -66,7 +66,7 @@ function fetchFemaleStudents() {
             // Add any other custom headers as needed
           }
     })
-        .then(response => response.json())
+        .then(response => response.text())
         
         .then(data => {
             const studentCountElement = document.getElementById('countFemaleStudents');
@@ -92,7 +92,7 @@ function fetchMaleStudents() {
             // Add any other custom headers as needed
           }
     })
-        .then(response => response.json())
+        .then(response => response.text())
         
         .then(data => {
             const studentCountElement = document.getElementById('countMaleStudents');

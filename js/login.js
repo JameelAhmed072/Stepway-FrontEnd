@@ -76,7 +76,6 @@ function login() {
 
         if(token){
             var a = parseJwt(token);
-
             
             const roles = a.ROLES;
 
