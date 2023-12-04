@@ -29,6 +29,9 @@
     <link rel="stylesheet" href="style.css">
     <!-- Modernize js -->
     <script src="js/allCoursesData.js"></script>
+    <script src="js/index1.js"></script>
+    <script src="js/singleUserCourses.js"></script>
+    <script src="js/loginUserName.js"></script>
 </head>
 
 <body>
@@ -38,11 +41,11 @@
     <div id="wrapper" class="wrapper bg-ash">
          <!-- Header Menu Area Start Here -->
         <div class="navbar navbar-expand-md header-menu-one bg-light">
-            <div class="nav-bar-header-one">
+            <div class="nav-bar-header-one"   style="width:70px; height: 70px;">
                 <div class="header-logo">
                     <a href="StudentDashboard.html">
-                        <img src="img/logo.png" alt="logo">
-                    </a>
+                        <!--img-properties--> <img src="img/Stepway-logo.png" alt="logo" style="margin-left: 5px; width:185px; height: 150px;">
+                     </a>
                 </div>
                   <div class="toggle-button sidebar-toggle">
                     <button type="button" class="item-link">
@@ -71,7 +74,7 @@
                         <a class="navbar-nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
                             aria-expanded="false">
                             <div class="admin-title">
-                                <h5 class="item-title">Stevne Zone</h5>
+                                <h5 class="item-title" id="UserName">Stevne Zone</h5>
                                 <span>Student</span>
                             </div>
                             <div class="admin-img">
@@ -79,9 +82,7 @@
                             </div>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
-                            <div class="item-header">
-                                <h6 class="item-title">Steven Zone</h6>
-                            </div>
+                            
                             <div class="item-content">
                                 <ul class="settings-list">
                                     <li><a href="#"><i class="flaticon-user"></i>My Profile</a></li>
@@ -250,7 +251,7 @@
                          </li>
                          
                          <li class="nav-item">
-                             <a href="all-class.html" class="nav-link"><i
+                             <a href="StudentCourses.html" class="nav-link"><i
                                      class="flaticon-maths-class-materials-cross-of-a-pencil-and-a-ruler"></i><span>My Courses</span></a>
                              <!-- <ul class="nav sub-group-menu">
                                  <li class="nav-item">
@@ -261,7 +262,7 @@
                              </ul> -->
                          </li>
                          <li class="nav-item ">
-                             <a href="all-certifications.html" class="nav-link"><i class="flaticon-classmates"></i><span>My Certifications</span></a>
+                             <a href="StudentCertifications.html" class="nav-link"><i class="flaticon-classmates"></i><span>My Certifications</span></a>
                          </li>
                          
                          <li class="nav-item">
@@ -271,18 +272,15 @@
                          
                          
                          <li class="nav-item">
-                             <a href="notice-board.html" class="nav-link"><i
+                             <a href="StudentNoticeBoard.html" class="nav-link"><i
                                      class="flaticon-script"></i><span>Notice Board</span></a>
                          </li>
                          <li class="nav-item">
-                             <a href="messaging.html" class="nav-link"><i
+                             <a href="StudentMessages.html" class="nav-link"><i
                                      class="flaticon-chat"></i><span>My Message</span></a>
                          </li>
                          
-                         <li class="nav-item">
-                             <a href="map.html" class="nav-link"><i
-                                     class="flaticon-planet-earth"></i><span>Map</span></a>
-                         </li>
+                         
                      </ul>
                  </div>
              </div>

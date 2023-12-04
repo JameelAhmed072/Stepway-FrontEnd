@@ -1,0 +1,75 @@
+body {
+    font-family: sans-serif;
+    }
+    
+    header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    }
+    
+    img {
+    max-width: 100%;
+    height: auto;
+    }
+    
+    .search-bar {
+    width: 50%;
+    margin: 0 auto;
+    }
+    
+    input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid gray;
+    }
+    
+    button {
+    padding: 0.5rem;
+    background-color: blue;
+    color: white;
+    border: none;
+    }
+    
+    main {
+    padding: 1rem;
+    }
+    
+    #slider {
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    }
+    
+    .slide {
+    width: 100%;
+    height: 100%;
+    background-image: url(https://example.com/image.png);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+    
+    h1 {
+    font-size: 2rem;
+    color: white;
+    }
+    
+    p {
+    font-size: 1rem;
+    color: white;
+    }
+    
+    .enroll-now {
+    color: blue;
+    text-decoration: none;
+    }
+    
+    footer {
+    text-align: center;
+    padding: 1rem;
+    }
+    
