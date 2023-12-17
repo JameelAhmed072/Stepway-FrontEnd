@@ -30,12 +30,14 @@ function allCoursesData() {
         data.forEach(courses => {
             const row = document.createElement('tr');
             row.innerHTML = `
-                
-                <td>${courses.courseName}</td>
-                <td>${courses.description}</td>
-                <td>${courses.startDate}</td>
-                <td>${courses.endDate}</td>
-                <td>${courses.type}</td>
+            <td>ID # ${courses.id}</td>
+            <td>${courses.courseName}</td>
+            <td>${courses.description}</td>
+            <td>${courses.discount}</td>
+            <td>${courses.startDate}</td>
+            <td>${courses.endDate}</td>
+            <td>${courses.price}</td>
+            <td>${courses.type}</td>
                 
             `;
 

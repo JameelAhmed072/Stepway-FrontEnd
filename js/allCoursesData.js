@@ -31,7 +31,7 @@ function allCoursesData() {
             const row = document.createElement('tr');
             row.innerHTML = `
                 
-                <td>${courses.id}</td>
+                <td>ID # ${courses.id}</td>
                 <td>${courses.courseName}</td>
                 <td>${courses.description}</td>
                 <td>${courses.discount}</td>
