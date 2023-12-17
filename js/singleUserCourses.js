@@ -38,9 +38,7 @@ function allCoursesData() {
             <td>${courses.endDate}</td>
             <td>${courses.price}</td>
             <td>${courses.type}</td>
-                
             `;
-
             tableBody.appendChild(row);
         });
     })
