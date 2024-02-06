@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Catalog</title>
+    <link rel="stylesheet" href="allCourses.css">
+</head>
+<body>
+
+    <div style="display: inline-block; margin-top: 20px;">
+        <a  href="StudentCourses.html" class="course-enroll-btn">Back</a>
+    </div>
+    <div id="course-container"></div>
+
+    <div class="popup" id="popup">
+        <a href="allCourses.html"><button>close</button></a>
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup()">&times;</span>
+            <h2 id="popup-title"></h2>
+            <p id="popup-description"></p>
+            <p id="popup-price"></p>
+            <p id="popup-discount"></p>
+            <p id="popup-start-date"></p>
+            <p id="popup-end-date"></p>
+            <p id="popup-type"></p>
+            <a id="popup-enroll-btn" class="course-enroll-btn"  onclick="enrollCourse()">Enrolll Now</a>
+        </div>
+    </div>
+
+<script src="js/allCourses.js"></script>
+
+</body>
+</html>
+

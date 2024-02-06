@@ -1,54 +1,3 @@
-// document.getElementById('login-form').addEventListener('submit', function(event) {
-//     event.preventDefault(); // Prevent the default form submission
-
-//     const email = document.getElementById('username').value;
-//     const password = document.getElementById('password').value;
-
-//     console.log(email);
-//     console.log(password);
-//     // Create a JSON object to send to the server
-//     const loginData = {
-//         email: email,
-//         password: password
-//     };
-
-//     console.log('Sending login request...');
-
-//     fetch('http://localhost:8080/api/login', {
-//         method: 'POST',
-//         headers: {
-//             'Content-Type': 'application/json'
-//         },
-//         body: JSON.stringify(loginData)
-//     })
-//     .then(response => {
-//         console.log('Received response:', response);
-
-//         if (response.ok) {
-//             return response.json();
-//         } else {
-//             console.error('Response not OK:', response);
-//             throw new Error('Network response was not ok');
-//         }
-//     })
-//     .then(data => {
-//         console.log('Received data:', data);
-
-//         if (data.accessToken) {
-//             // Save the token in local storage
-//             localStorage.setItem('token', data.accessToken);
-            
-//             // Redirect to the desired page (index1.html in this case)
-//             window.location.href = 'index1.html';
-//         } else {
-//             // Handle login error (e.g., show an error message)
-//             console.error('Login failed. Incorrect email or password.');
-//         }
-//     })
-//     .catch(error => {
-//         console.error('An error occurred:', error);
-//     });
-// });
 
 
 function login() {
@@ -75,8 +24,9 @@ function login() {
         localStorage.setItem("token",token)
 
         if(token){
+            var userId = token.id;
             var a = parseJwt(token);
-            
+            debugger
             const roles = a.ROLES;
 
             if (roles[0] === "ADMIN") {
