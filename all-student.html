@@ -31,6 +31,21 @@
     <script src="js/allStudentData.js"></script>
     <script src="js/loginUserName.js"></script>
     <script src="js/interceptor.js"></script>
+    <style>
+        .pagination {
+            margin-top: 20px;
+            display: flex;
+            justify-content: right;
+        }
+
+        .pagination button {
+            margin: 0 5px;
+            padding: 8px 12px;
+            color: white;
+            background-color: #ffa601;
+            border-radius: 10px;
+        }
+    </style>
 </head>
 
 <body>
@@ -143,17 +158,6 @@
                                  </li>
                              </ul>
                          </li>
-                         
-                         
-                         <li class="nav-item sidebar-nav-item">
-                             <a href="#" class="nav-link"><i class="flaticon-technological"></i><span>Account</span></a>
-                             <ul class="nav sub-group-menu">
-                                 <li class="nav-item">
-                                     <a href="all-fees.html" class="nav-link"><i class="fas fa-angle-right"></i>All Fees
-                                         Collection</a>
-                                 </li>
-                             </ul>
-                         </li>
                          <li class="nav-item sidebar-nav-item">
                              <a href="#" class="nav-link"><i
                                      class="flaticon-maths-class-materials-cross-of-a-pencil-and-a-ruler"></i><span>Courses</span></a>
@@ -168,10 +172,20 @@
                                  </li>
                              </ul>
                          </li>
-                         <li class="nav-item">
-                             <a href="student-attendence.html" class="nav-link"><i
-                                     class="flaticon-checklist"></i><span>Attendence</span></a>
-                         </li>
+                         <li class="nav-item sidebar-nav-item">
+                            <a href="#" class="nav-link"><i
+                                    class="flaticon-multiple-users-silhouette"></i><span>Affiliated Institutes</span></a>
+                            <ul class="nav sub-group-menu">
+                                <li class="nav-item">
+                                    <a href="affiliatedUniversties.html" class="nav-link"><i class="fas fa-angle-right"></i>All
+                                        Institutes</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="addAffiliatedUniversity.html" class="nav-link"><i class="fas fa-angle-right"></i>Add New
+                                        Institutes</a>
+                                </li>
+                            </ul>
+                        </li>
                          <li class="nav-item">
                              <a href="notice-board.html" class="nav-link"><i
                                      class="flaticon-script"></i><span>Notice</span></a>
@@ -217,19 +231,21 @@
                             <table class="table display data-table text-nowrap">
                                 <thead>
                                     <tr>
-                                        
                                         <th>ID</th>
                                         <th>FirstName</th>
                                         <th>LastName</th>
                                         <th>Email</th>
                                         <th>PhoneNumber</th>
-                                        
                                     </tr>
                                 </thead>
                                 <tbody id="studentTableBody">
-                                    
                                 </tbody>
                             </table>
+                             <!-- Pagination controls -->
+                            <div class="pagination">
+                                <button id="preBtn">Previous</button>
+                                <button id="nextBtn">Next</button>
+                            </div>
                         </div>
                     </div>
                 </div>

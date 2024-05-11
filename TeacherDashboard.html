@@ -31,6 +31,8 @@
     <script src="js/index1.js"></script>
     <script src="js/allCoursesData.js"></script>
     <script src="js/loginUserName.js"></script>
+    <script src="js/logout.js"></script>
+
 </head>
 
 <body>
@@ -81,8 +83,8 @@
                             </div>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
-                            <div class="item-content">
-                                <ul class="settings-list">
+                            <div class="item-content" id="logout">
+                                <ul class="settings-list" onclick="logout()">
                                     <li><a href="index.html"><i class="flaticon-turn-off"></i>Log Out</a></li>
                                 </ul>
                             </div>
@@ -112,6 +114,14 @@
                         <li class="nav-item">
                             <a href="TeacherCourses.html" class="nav-link"><i
                                     class="flaticon-maths-class-materials-cross-of-a-pencil-and-a-ruler"></i><span>My Courses</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="TeacherDailyChallenges.html" class="nav-link"><i
+                                    class="flaticon-maths-class-materials-cross-of-a-pencil-and-a-ruler"></i><span>Daily Challenges</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="TeacherUniversityAffiliation.html" class="nav-link"><i
+                                    class="flaticon-script"></i><span>Affiliated Institutes</span></a>
                         </li>
                         <li class="nav-item">
                             <a href="TeacherNoticeBoard.html" class="nav-link"><i

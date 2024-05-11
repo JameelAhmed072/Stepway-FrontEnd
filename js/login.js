@@ -17,7 +17,6 @@ function login() {
         body: JSON.stringify(data)
     })
     .then(response => response.json()
-        
     )
     .then(data => {
         var token = data.accessToken;

@@ -177,126 +177,132 @@
     /*-------------------------------------
           Line Chart 
       -------------------------------------*/
-    if ($("#earning-line-chart").length) {
+      let myArray = [];
+      if ($("#earning-line-chart").length) {
 
-      var lineChartData = {
-        labels: ["", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun", ""],
-        datasets: [{
-            data: [0, 5e4, 1e4, 5e4, 14e3, 7e4, 5e4, 75e3, 5e4],
-            backgroundColor: '#ff0000',
-            borderColor: '#ff0000',
-            borderWidth: 1,
-            pointRadius: 0,
-            pointBackgroundColor: '#ff0000',
-            pointBorderColor: '#ffffff',
-            pointHoverRadius: 6,
-            pointHoverBorderWidth: 3,
-            fill: 'origin',
-            label: "Total Collection"
-          },
-          {
-            data: [0, 3e4, 2e4, 6e4, 7e4, 5e4, 5e4, 9e4, 8e4],
-            backgroundColor: '#417dfc',
-            borderColor: '#417dfc',
-            borderWidth: 1,
-            pointRadius: 0,
-            pointBackgroundColor: '#304ffe',
-            pointBorderColor: '#ffffff',
-            pointHoverRadius: 6,
-            pointHoverBorderWidth: 3,
-            fill: 'origin',
-            label: "Fees Collection"
-          }
-        ]
-      };
-      var lineChartOptions = {
-        responsive: true,
-        maintainAspectRatio: false,
-        animation: {
-          duration: 2000
-        },
-        scales: {
-
-          xAxes: [{
-            display: true,
-            ticks: {
-              display: true,
-              fontColor: "#222222",
-              fontSize: 16,
-              padding: 20
-            },
-            gridLines: {
-              display: true,
-              drawBorder: true,
-              color: '#cccccc',
-              borderDash: [5, 5]
-            }
-          }],
-          yAxes: [{
-            display: true,
-            ticks: {
-              display: true,
-              autoSkip: true,
-              maxRotation: 0,
-              fontColor: "#646464",
-              fontSize: 16,
-              stepSize: 25000,
-              padding: 20,
-              callback: function (value) {
-                var ranges = [{
-                    divider: 1e6,
-                    suffix: 'M'
-                  },
-                  {
-                    divider: 1e3,
-                    suffix: 'k'
-                  }
-                ];
-
-                function formatNumber(n) {
-                  for (var i = 0; i < ranges.length; i++) {
-                    if (n >= ranges[i].divider) {
-                      return (n / ranges[i].divider).toString() + ranges[i].suffix;
-                    }
-                  }
-                  return n;
+        
+        function top5CoursesNames() {
+          fetch('http://localhost:8080/api/getTopEnrolledCourses',{
+              
+              headers: {
+                  'Content-Type': 'application/json', // Example: Sending JSON data
+                  'Authorization': `Bearer ${getToken}`, // Example: Sending an authorization token
+                  // Add any other custom headers as needed
                 }
-                return formatNumber(value);
+          })
+              .then(response => response.json())
+              
+              .then(data => {
+                myArray = data.slice(0, 5);
+                 
+                // Update barChartData.labels with fetched data
+                barChartData.labels = myArray;
+
+
+                // Refresh the chart
+                earningChart.update();
+              })
+              
+              .catch(error => {
+                  console.error('Error fetching data: ' + error);
+              });
+      }
+      top5CoursesNames();
+
+      function top5CoursesCount() {
+        fetch('http://localhost:8080/api/enrollment/count',{
+            
+            headers: {
+                'Content-Type': 'application/json', // Example: Sending JSON data
+                'Authorization': `Bearer ${getToken}`, // Example: Sending an authorization token
+                // Add any other custom headers as needed
               }
-            },
-            gridLines: {
-              display: true,
-              drawBorder: false,
-              color: '#cccccc',
-              borderDash: [5, 5],
-              zeroLineBorderDash: [5, 5],
-            }
-          }]
-        },
-        legend: {
-          display: false
-        },
-        tooltips: {
-          mode: 'index',
-          intersect: false,
-          enabled: true
-        },
-        elements: {
-          line: {
-            tension: .35
-          },
-          point: {
-            pointStyle: 'circle'
-          }
-        }
-      };
-      var earningCanvas = $("#earning-line-chart").get(0).getContext("2d");
-      var earningChart = new Chart(earningCanvas, {
-        type: 'line',
-        data: lineChartData,
-        options: lineChartOptions
-      });
+        })
+            .then(response => response.json())
+            
+            .then(data => {
+              const top5Courses = data.slice(0, 5);
+               // Update barChartData.datasets[0].data with the counts of the first 5 courses
+              barChartData.datasets[0].data = top5Courses.map(course => course.count);
+               
+              // Refresh the chart
+               earningChart.update();
+            })
+            
+            .catch(error => {
+                console.error('Error fetching data: ' + error);
+            });
     }
+    top5CoursesCount();
+      
+      
+        var barChartData = {
+          // labels: ["AI", "Cyber Security", "Data Science", "Digital Marketing", "Web-Develop"],
+          labels:[],
+          datasets: [
+            {
+              label: "Top Courses",
+              data: [1000, 500, 200, 100, 50],
+              backgroundColor: '#417dfc', // Color for Fees Collection
+              borderColor: '#417dfc', // Optional border color for bars
+              borderWidth: 1
+            }
+          ]
+        };
+      
+        var barChartOptions = {
+          responsive: true,
+          maintainAspectRatio: false,
+          animation: {
+            duration: 4000
+          },
+          scales: {
+            xAxes: [{
+              display: true,
+              ticks: {
+                fontColor: "#222222",
+                fontSize: 16,
+                padding: 20
+              },
+              gridLines: {
+                display: true,
+                drawBorder: true,
+                color: 'blue',
+                borderDash: [5, 5]
+              }
+            }],
+            yAxes: [{
+              display: true,
+              ticks: {
+                fontColor: "#646464",
+                fontSize: 16,
+                stepSize: 100, // Set the step size based on your data
+                padding: 20
+              },
+              gridLines: {
+                display: true,
+                drawBorder: false,
+                color: '#cccccc',
+                borderDash: [5, 5],
+                zeroLineBorderDash: [5, 5],
+              }
+            }]
+          },
+          legend: {
+            display: false
+          },
+          tooltips: {
+            enabled: true
+          }
+        };
+      
+        var earningCanvas = $("#earning-line-chart").get(0).getContext("2d");
+        var earningChart = new Chart(earningCanvas, {
+          type: 'bar', // Change type from 'line' to 'bar'
+          data: barChartData,
+          options: barChartOptions
+        });
+      }
 
     /*-------------------------------------
           Bar Chart 
@@ -409,13 +415,13 @@
         cutoutPercentage: 65,
         rotation: -9.4,
         animation: {
-          duration: 2000
+          duration: 4000
         },
         legend: {
           display: false
         },
         tooltips: {
-          enabled: true
+          enabled: false
         },
       };
       var studentCanvas = $("#student-doughnut-chart").get(0).getContext("2d");
@@ -443,7 +449,7 @@
         aspectRatio: 1.8,
         events: [{
             title: 'All Day Event',
-            start: '2019-04-01'
+            start: '2024-01-01'
           },
 
           {

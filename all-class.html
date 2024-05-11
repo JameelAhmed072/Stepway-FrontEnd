@@ -30,6 +30,22 @@
     <!-- Modernize js -->
     <script src="js/allCoursesData.js"></script>
     <script src="js/loginUserName.js"></script>
+
+    <style>
+        .pagination {
+            margin-top: 20px;
+            display: flex;
+            justify-content: right;
+        }
+
+        .pagination button {
+            margin: 0 5px;
+            padding: 8px 12px;
+            color: white;
+            background-color: #ffa601;
+            border-radius: 10px;
+        }
+    </style>
 </head>
 
 <body>
@@ -143,23 +159,6 @@
                              </ul>
                          </li>
                          <li class="nav-item sidebar-nav-item">
-                             <a href="#" class="nav-link"><i class="flaticon-technological"></i><span>Account</span></a>
-                             <ul class="nav sub-group-menu">
-                                 <li class="nav-item">
-                                     <a href="all-fees.html" class="nav-link"><i class="fas fa-angle-right"></i>All Fees
-                                         Collection</a>
-                                 </li>
-                                 <!-- <li class="nav-item">
-                                     <a href="all-expense.html" class="nav-link"><i
-                                             class="fas fa-angle-right"></i>Expenses</a>
-                                 </li>
-                                 <li class="nav-item">
-                                     <a href="add-expense.html" class="nav-link"><i class="fas fa-angle-right"></i>Add
-                                         Expenses</a>
-                                 </li> -->
-                             </ul>
-                         </li>
-                         <li class="nav-item sidebar-nav-item">
                              <a href="#" class="nav-link"><i
                                      class="flaticon-maths-class-materials-cross-of-a-pencil-and-a-ruler"></i><span>Courses</span></a>
                              <ul class="nav sub-group-menu">
@@ -173,18 +172,20 @@
                                  </li>
                              </ul>
                          </li>
-                         <!-- <li class="nav-item">
-                             <a href="all-subject.html" class="nav-link"><i
-                                     class="flaticon-open-book"></i><span>Subject</span></a>
-                         </li> -->
-                         <!-- <li class="nav-item">
-                             <a href="class-routine.html" class="nav-link"><i class="flaticon-calendar"></i><span>Class
-                                     Routine</span></a>
-                         </li> -->
-                         <li class="nav-item">
-                             <a href="student-attendence.html" class="nav-link"><i
-                                     class="flaticon-checklist"></i><span>Attendence</span></a>
-                         </li>
+                         <li class="nav-item sidebar-nav-item">
+                            <a href="#" class="nav-link"><i
+                                    class="flaticon-multiple-users-silhouette"></i><span>Affiliated Institutes</span></a>
+                            <ul class="nav sub-group-menu">
+                                <li class="nav-item">
+                                    <a href="affiliatedUniversties.html" class="nav-link"><i class="fas fa-angle-right"></i>All
+                                        Institutes</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="addAffiliatedUniversity.html" class="nav-link"><i class="fas fa-angle-right"></i>Add New
+                                        Institutes</a>
+                                </li>
+                            </ul>
+                        </li>
                          <li class="nav-item">
                              <a href="notice-board.html" class="nav-link"><i
                                      class="flaticon-script"></i><span>Notice</span></a>
@@ -216,14 +217,8 @@
                         </div>
                         <form class="mg-b-20">
                             <div class="row gutters-8">
-                                <div class="col-3-xxxl col-xl-3 col-lg-3 col-12 form-group">
-                                    <input type="text" placeholder="Search by ID ..." class="form-control">
-                                </div>
                                 <div class="col-4-xxxl col-xl-4 col-lg-3 col-12 form-group">
                                     <input type="text" placeholder="Search by Name ..." class="form-control">
-                                </div>
-                                <div class="col-4-xxxl col-xl-3 col-lg-3 col-12 form-group">
-                                    <input type="text" placeholder="Search by Class ..." class="form-control">
                                 </div>
                                 <div class="col-1-xxxl col-xl-2 col-lg-3 col-12 form-group">
                                     <button type="submit" class="fw-btn-fill btn-gradient-yellow">SEARCH</button>
@@ -246,10 +241,13 @@
                                     </tr>
                                 </thead>
                                 <tbody id="coursesTableBody">
-
                                 </tbody>
-                        
                             </table>
+                             <!-- Pagination controls -->
+                             <div class="pagination">
+                                <button id="preBtn">Previous</button>
+                                <button id="nextBtn">Next</button>
+                            </div>
                         </div>
                     </div>
                 </div>

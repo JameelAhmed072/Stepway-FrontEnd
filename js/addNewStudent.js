@@ -1,3 +1,5 @@
+// const apiUrl = process.env.STEPWAY_APP_API_URL;
+
 var getToken = localStorage.getItem("token")
 // debugger
 if(getToken == null){
@@ -32,7 +34,7 @@ function saveStudent() {
     const jsonData = JSON.stringify(newStudent);
 
     // Fetch API to send data to the backend
-    fetch('http://localhost:8080/api/user', {
+    fetch(`http://localhost:8080/api/user`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json', // Example: Sending JSON data
@@ -48,7 +50,7 @@ function saveStudent() {
          // Reset form fields
             document.getElementById('firstName').value='';
             document.getElementById('lastName').value=''; 
-            document.getElementById('gender').value=''; 
+            document.getElementById('gender').value='';
             document.getElementById('email').value='';
             document.getElementById('password').value='';
             document.getElementById('phoneNumber').value='';

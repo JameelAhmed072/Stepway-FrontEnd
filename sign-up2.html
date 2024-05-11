@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <link rel="stylesheet" href="styles.css"> -->
     <title>Sign Up Form</title>
+    <script src="js/addUser.js"></script>
 </head>
 <style>
     body {
@@ -52,10 +53,10 @@ button {
     <h2>Sign Up</h2>
     <form id="signupForm">
         <label for="firstname">FirstName:</label>
-        <input type="text" id="firstname" name="firstname" required>
+        <input type="text" id="firstName" name="firstName" required>
 
         <label for="lastname">LastName:</label>
-        <input type="text" id="lastname" name="lastname" required>
+        <input type="text" id="lastName" name="lastName" required>
 
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required>
@@ -67,12 +68,14 @@ button {
         <input type="gender" id="gender" name="gender" required>
 
         <label for="phonenumber">PhoneNumber:</label>
-        <input type="phonenumber" id="phonenumber" name="phonenumber" required>
+        <input type="phonenumber" id="phoneNumber" name="phoneNumber" required>
+       
+        <input type="hidden" id="role" name="role" value="ROLE_STUDENT">
 
         <button type="button" onclick="submitForm()">Sign Up</button>
     </form>
 </div>
 
-<script src="js/addUser.js"></script>
+
 </body>
 </html>

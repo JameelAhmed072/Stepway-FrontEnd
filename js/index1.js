@@ -162,3 +162,61 @@ function fetchMaleStudents() {
 
 // Call the function to fetch and update the student count when the page loads
 fetchMaleStudents();
+
+
+
+
+function certificationCount() {
+    fetch('http://localhost:8080/api/countTotalCertifications',{
+        
+        headers: {
+            'Content-Type': 'application/json', // Example: Sending JSON data
+            'Authorization': `Bearer ${getToken}`, // Example: Sending an authorization token
+            // Add any other custom headers as needed
+          }
+    })
+        .then(response => response.text())
+        
+        .then(data => {
+            const studentCountElement = document.getElementById('certificationCount');
+            studentCountElement.textContent = data; // Update the content with the fetched number
+            // console.log(data);
+        })
+        
+        .catch(error => {
+            console.error('Error fetching data: ' + error);
+        });
+}
+
+// Call the function to fetch and update the student count when the page loads
+certificationCount();
+
+
+
+function totalRegistrations() {
+    fetch('http://localhost:8080/api/countTotalEnrollments',{
+        
+        headers: {
+            'Content-Type': 'application/json', // Example: Sending JSON data
+            'Authorization': `Bearer ${getToken}`, // Example: Sending an authorization token
+            // Add any other custom headers as needed
+          }
+    })
+        .then(response => response.text())
+        
+        .then(data => {
+            const studentCountElement = document.getElementById('totalRegistrations');
+            studentCountElement.textContent = data; // Update the content with the fetched number
+            // console.log(data);
+        })
+        
+        .catch(error => {
+            console.error('Error fetching data: ' + error);
+        });
+}
+
+// Call the function to fetch and update the student count when the page loads
+totalRegistrations();
+
+
+

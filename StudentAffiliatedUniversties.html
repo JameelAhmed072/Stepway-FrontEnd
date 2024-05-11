@@ -1,0 +1,224 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+
+<!-- Mirrored from www.radiustheme.com/demo/html/psdboss/akkhor/akkhor/all-class.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 05 Oct 2023 17:31:02 GMT -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>STEPWAY | All Courses</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="css/all.min.css">
+    <!-- Flaticon CSS -->
+    <link rel="stylesheet" href="fonts/flaticon.css">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="css/animate.min.css">
+    <!-- Data Table CSS -->
+    <link rel="stylesheet" href="css/jquery.dataTables.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Modernize js -->
+    <script src="js/loginUserName.js"></script>
+    <script src="js/allCourses.js"></script>
+    <script src="js/getAllInstitutes.js"></script>
+
+    <style>
+        .pagination {
+            margin-top: 20px;
+            display: flex;
+            justify-content: right;
+        }
+
+        .pagination button {
+            margin: 0 5px;
+            padding: 8px 12px;
+            color: white;
+            background-color: #ffa601;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Preloader Start Here -->
+    <div id="preloader"></div>
+    <!-- Preloader End Here -->
+    <div id="wrapper" class="wrapper bg-ash">
+         <!-- Header Menu Area Start Here -->
+        <div class="navbar navbar-expand-md header-menu-one bg-light">
+            <div class="nav-bar-header-one"   style="width:70px; height: 70px;">
+                <div class="header-logo">
+                    <a href="StudentDashboard.html">
+                        <!--img-properties--> <img src="img/Stepway-logo.png" alt="logo" style="margin-left: 5px; width:185px; height: 150px;">
+                     </a>
+                </div>
+                  <div class="toggle-button sidebar-toggle">
+                    <button type="button" class="item-link">
+                        <span class="btn-icon-wrap">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+            <div class="d-md-none mobile-nav-bar">
+               <button class="navbar-toggler pulse-animation" type="button" data-toggle="collapse" data-target="#mobile-navbar" aria-expanded="false">
+                    <i class="far fa-arrow-alt-circle-down"></i>
+                </button>
+                <button type="button" class="navbar-toggler sidebar-toggle-mobile">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <div class="header-main-menu collapse navbar-collapse" id="mobile-navbar">
+                <ul class="navbar-nav">
+                    
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="navbar-item dropdown header-admin">
+                        <a class="navbar-nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                            aria-expanded="false">
+                            <div class="admin-title">
+                                <h5 class="item-title" id="UserName"></h5>
+                                <span>Student</span>
+                            </div>
+                            <div class="admin-img">
+                                <img src="img/figure/admin.jpg" alt="Student">
+                            </div>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <div class="item-content">
+                                <ul class="settings-list">
+                                    <li><a href="index.html"><i class="flaticon-turn-off"></i>Log Out</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- Header Menu Area End Here -->
+        <!-- Page Area Start Here -->
+        <div class="dashboard-page-one">
+            <!-- Sidebar Area Start Here -->
+            <div class="sidebar-main sidebar-menu-one sidebar-expand-md sidebar-color">
+                <div class="mobile-sidebar-header d-md-none">
+                     <div class="header-logo">
+                         <a href="StudentDashboard.html"><img src="img/logo1.png" alt="logo"></a>
+                     </div>
+                </div>
+                 <div class="sidebar-menu-content">
+                     <ul class="nav nav-sidebar-menu sidebar-toggle-view">
+                         
+                         <li class="nav-item ">
+                             <a href="StudentDashboard.html" class="nav-link"><i class="flaticon-dashboard"></i><span>Dashboard</span></a>
+                             
+                         </li>
+                         <li class="nav-item">
+                             <a href="StudentCourses.html" class="nav-link"><i
+                                     class="flaticon-maths-class-materials-cross-of-a-pencil-and-a-ruler"></i><span>My Courses</span></a>
+                         </li>
+                         <li class="nav-item ">
+                             <a href="StudentCertifications.html" class="nav-link"><i class="flaticon-classmates"></i><span>My Certifications</span></a>
+                         </li>
+                         
+                         <li class="nav-item">
+                            <a href="allCourses.html" class="nav-link"><i
+                                    class="flaticon-checklist"></i><span>Explore Courses</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="StudentAffiliatedUniversties.html" class="nav-link"><i
+                                    class="flaticon-script"></i><span>Affiliated Institutes</span></a>
+                        </li>
+                         
+                         <li class="nav-item">
+                             <a href="StudentNoticeBoard.html" class="nav-link"><i
+                                     class="flaticon-script"></i><span>Notice Board</span></a>
+                         </li>
+                     </ul>
+                 </div>
+             </div>
+            <!-- Sidebar Area End Here -->
+            <div class="dashboard-content-one">
+                <!-- Breadcubs Area Start Here -->
+                <div class="breadcrumbs-area">
+                    <h3>Institutional</h3>
+                    <ul>
+                        <li>
+                            <a href="StudentDashboard.html">Home</a>
+                        </li>
+                        <li>All Institutions</li>
+                    </ul>
+                </div>
+                <!-- Breadcubs Area End Here -->
+                <!-- Class Table Area Start Here -->
+                <div class="card height-auto">
+                    
+                    <div class="card-body">
+                        <div class="heading-layout1">
+                            <div class="item-title">
+                                <h3>All Institutions Data</h3>
+                            </div>
+                           
+                        </div>
+                        
+                        <div class="table-responsive">
+                            <table class="table display data-table text-nowrap">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Full Name</th>
+                                        <th>Location</th>
+                                        <th>Type</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="InstitutionalTableBody">
+
+                                </tbody>
+                        
+                            </table>
+                             <!-- Pagination controls -->
+                             <div class="pagination">
+                                <button id="preBtn">Previous</button>
+                                <button id="nextBtn">Next</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Class Table Area End Here -->
+                <footer class="footer-wrap-layout1">
+                    <div class="copyright">© Copyrights <a href="https://cloudtekkies.com/index.html"  target="_blank">Stepway</a> 2023. All rights reserved. Designed by <a href="#">Jameel & Waji</a></div>
+                </footer>
+            </div>
+        </div>
+        <!-- Page Area End Here -->
+    </div>
+    <!-- jquery-->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <!-- Plugins js -->
+    <script src="js/plugins.js"></script>
+    <!-- Popper js -->
+    <script src="js/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Scroll Up Js -->
+    <script src="js/jquery.scrollUp.min.js"></script>
+    <!-- Data Table Js -->
+    <script src="js/jquery.dataTables.min.js"></script>
+    <!-- Custom Js -->
+    <script src="js/main.js"></script>
+
+</body>
+
+
+<!-- Mirrored from www.radiustheme.com/demo/html/psdboss/akkhor/akkhor/all-class.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 05 Oct 2023 17:31:02 GMT -->
+</html>

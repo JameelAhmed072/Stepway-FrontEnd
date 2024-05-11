@@ -102,153 +102,94 @@ async function openPopup(index) {
 
     
 }
-
-// Function to close the popup
-function closePopup() {
-    const popup = document.getElementById("popup");
-    popup.style.display = "none";
-}
-closePopup();
-
-
-
 // ----------------------------------------  Enroll in Course  ----------------------------------------------
 
-//   code above the line is working, 
-// Now I have to take the id of current logged in user then I can implement the Enroll Now action
 
 
-document.addEventListener('DOMContentLoaded', function () {
-    // Add an event listener to the Enroll Now button
-    var enrollBtn = document.getElementById('popup-enroll-btn');
-    enrollBtn.addEventListener('click', enrollCourse);
-});
 
-// Function to handle the Enroll Now button click event
-function enrollCourse() {
-    // Get the current user id and course id
-    var userId = getCurrentUserId();
-    var courseId = getClickedCourseId();
-    enrollBtn.addEventListener("click", () => getClickedCourseId(selectedCourse));
-
-    // Prepare data to send to the backend
-    var data = {
-        userId: userId,
-        courseId: courseId
-    };
-
-    // Make a fetch request to your backend API
-    fetch('http://localhost:8080/api/enrollment', {
-        method: 'POST',
+allAvalableCoursesForEnrollment();
+function allAvalableCoursesForEnrollment() {
+    fetch(`http://localhost:8080/api/enrollcourses`, {
+        method: 'GET',
         headers: {
             'Content-Type': 'application/json', // Example: Sending JSON data
             'Authorization': `Bearer ${getToken}`, // Example: Sending an authorization token
             // Add any other custom headers as needed
-          },
-        body: JSON.stringify(data),
+          }
     })
-    .then(response => response.json()
-    )
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
     .then(data => {
-        var token = data.accessToken;
-        localStorage.setItem("token",token)
+        console.log("courses : ", data);
+        // Assuming data is an array of student objects
+        const tableBody = document.getElementById('availableCoursesTableBody');
+        tableBody.innerHTML = ''; // Clear the table body
+        let id = 1;
+        data.forEach(course => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+            <td>${id}</td>
+            <td>${course.courseName}</td>
+            <td>${course.description}</td>
+            <td>${course.discount}</td>
+            <td>${course.startDate}</td>
+            <td>${course.endDate}</td>
+            <td>${course.price}</td>
+            <td>${course.type}</td>
+            <td><button type="button" class="btn btn-primary btn-lg" alert("Register") data-course-id="${course.id}">Register Course</button></td>
+            `;
+            tableBody.appendChild(row);
+            id++;
+        });
 
-        if(token){
-            var a = parseJwt(token);
-            
-            const userId = a.id;
-            
-           
-        }
-        else{
-            console.log("Token Not Found");
-        }
-        console.log(token);
-        // You can save the token in local storage or as needed
-        // Redirect to index1.html
-        
+        // Add event listeners to all "Register Course" buttons
+        const buttons = document.querySelectorAll('.btn-primary');
+        buttons.forEach(button => {
+            button.addEventListener('click', handleRegisterCourse);
+        });
     })
     .catch(error => {
-        console.error('Error during enrollment:', error.message);
+        console.error('There was a problem with the fetch operation:', error);
     });
 }
 
-function getCurrentUserId(){
+function handleRegisterCourse(event) {
+    const button = event.target;
+    const courseId = button.getAttribute('data-course-id');
 
-    var username = document.getElementById("username").value;
-    var password = document.getElementById("password").value;
-    
-    var data = {
-        "email": username,
-        "password": password
+    // Prepare data to be sent in the POST request
+    const requestData = {
+        courseId: courseId,
+        // Add any other data needed for the POST request here
     };
 
-    fetch('http://localhost:8080/api/login', {
+    // Send the POST request
+    fetch(`http://localhost:8080/api/available-enrollment`, {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${getToken}`,
+            // Add any other headers as needed
         },
-        body: JSON.stringify(data)
+        body: JSON.stringify(requestData) // Convert the requestData object to JSON
     })
-    .then(response => response.json()
-        
-    )
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
     .then(data => {
-        var token = data.accessToken;
-        localStorage.setItem("token",token)
+        console.log('Course registered successfully:', data);
+        // You can add additional logic here, e.g., showing a success message to the user
 
-        if(token){
-            var a = parseJwt(token);
-
-            const id = a.userId;
-            
-        }
-        else{
-            console.log("Token Not Found");
-        }
-        console.log(token);
-        // You can save the token in local storage or as needed
-        // Redirect to index1.html
-        
+        allAvalableCoursesForEnrollment();
     })
     .catch(error => {
-        alert("Login failed. Please check your credentials.");
+        console.error('There was a problem with the POST operation:', error);
     });
-}
-
-function parseJwt (token) {
-
-    var base64Url = token.split('.')[1];
-    var base64 = decodeURIComponent(atob(base64Url).split('').map((c)=>{
-        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-    }).join(''));
-    return JSON.parse(base64);
-};
-
-function getClickedCourseId(selectedCourse) {
-     // Extract the ID or other relevant information from the selectedCourse
-    const courseId = selectedCourse.id;
-    
-    
-    const enrollApiUrl = `http://localhost:8080/api/enrollment/${courseId}`;
-        fetch(enrollApiUrl, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${getToken}`,
-            },
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`);
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log('Enrollment successful:', data);
-        })
-        .catch(error => {
-            console.error('Error enrolling in the course:', error);
-        });
-    closePopup();
 }

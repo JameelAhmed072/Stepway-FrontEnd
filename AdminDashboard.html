@@ -28,6 +28,7 @@
     <!-- Modernize js -->
     <script src="js/index1.js"></script>
     <script src="js/loginUserName.js"></script>
+    <script src="js/logout.js"></script>
 </head>
 
 <body>
@@ -70,7 +71,7 @@
                         <a class="navbar-nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
                             aria-expanded="false">
                             <div class="admin-title">
-                                <h5 class="item-title" id="UserName">Stevne Zone</h5>
+                                <h5 class="item-title" id="UserName">Jameeel Albalochi</h5>
                                 <span>Admin</span>
                             </div>
                             <div class="admin-img">
@@ -78,8 +79,8 @@
                             </div>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
-                            <div class="item-content">
-                                <ul class="settings-list">
+                            <div class="item-content" id="logout">
+                                <ul class="settings-list" onclick="logout()">
                                     <li><a href="index.html"><i class="flaticon-turn-off"></i>Log Out</a></li>
                                 </ul>
                             </div>
@@ -111,10 +112,6 @@
                                     <a href="all-student.html" class="nav-link"><i class="fas fa-angle-right"></i>All
                                         Students</a>
                                 </li>
-                                <!-- <li class="nav-item">
-                                    <a href="student-details.html" class="nav-link"><i
-                                            class="fas fa-angle-right"></i>Student Details</a>
-                                </li> -->
                                 <li class="nav-item">
                                     <a href="admit-form.html" class="nav-link"><i
                                             class="fas fa-angle-right"></i>Add New Student</a>
@@ -130,40 +127,14 @@
                                     <a href="all-teacher.html" class="nav-link"><i class="fas fa-angle-right"></i>All
                                         Teachers</a>
                                 </li>
-                                <!-- <li class="nav-item">
-                                    <a href="teacher-details.html" class="nav-link"><i
-                                            class="fas fa-angle-right"></i>Teacher Details</a>
-                                </li> -->
                                 <li class="nav-item">
                                     <a href="add-teacher.html" class="nav-link"><i class="fas fa-angle-right"></i>Add New
                                         Teacher</a>
                                 </li>
                             </ul>
                         </li>
+                    
                         
-                        <!-- <li class="nav-item sidebar-nav-item">
-                            <a href="#" class="nav-link"><i class="flaticon-books"></i><span>All Books</span></a>
-                            <ul class="nav sub-group-menu">
-                                <li class="nav-item">
-                                    <a href="all-book.html" class="nav-link"><i class="fas fa-angle-right"></i>All
-                                        Book</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="add-book.html" class="nav-link"><i class="fas fa-angle-right"></i>Add New
-                                        Book</a>
-                                </li>
-                            </ul>
-                        </li> -->
-                        <li class="nav-item sidebar-nav-item">
-                            <a href="#" class="nav-link"><i class="flaticon-technological"></i><span>Account</span></a>
-                            <ul class="nav sub-group-menu">
-                                <li class="nav-item">
-                                    <a href="all-fees.html" class="nav-link"><i class="fas fa-angle-right"></i>All Fees
-                                        Collection
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
                         <li class="nav-item sidebar-nav-item">
                             <a href="#" class="nav-link"><i
                                     class="flaticon-maths-class-materials-cross-of-a-pencil-and-a-ruler"></i><span>Courses</span></a>
@@ -178,9 +149,19 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="nav-item">
-                            <a href="student-attendence.html" class="nav-link"><i
-                                    class="flaticon-checklist"></i><span>Attendence</span></a>
+                        <li class="nav-item sidebar-nav-item">
+                            <a href="#" class="nav-link"><i
+                                    class="flaticon-multiple-users-silhouette"></i><span>Affiliated Institutes</span></a>
+                            <ul class="nav sub-group-menu">
+                                <li class="nav-item">
+                                    <a href="affiliatedUniversties.html" class="nav-link"><i class="fas fa-angle-right"></i>All
+                                        Institutes</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="addAffiliatedUniversity.html" class="nav-link"><i class="fas fa-angle-right"></i>Add New
+                                        Institutes</a>
+                                </li>
+                            </ul>
                         </li>
                         <li class="nav-item">
                             <a href="notice-board.html" class="nav-link"><i
@@ -209,7 +190,7 @@
                             <div class="row align-items-center">
                                 <div class="col-6">
                                     <div class="item-icon bg-light-green">
-                                        <i class="flaticon-classmates text-green"></i>
+                                        <i class="flaticon-classmates text-yellow"></i>
                                     </div>
                                 </div>
                                 <div class="col-6">
@@ -243,8 +224,8 @@
                         <div class="dashboard-summery-one mg-b-20">
                             <div class="row align-items-center">
                                 <div class="col-6">
-                                    <div class="item-icon bg-light-red">
-                                        <i class="flaticon-money text-red"></i>
+                                    <div class="item-icon bg-light-blue">
+                                        <i class="fas fa-book text-yellow"></i>
                                     </div>
                                 </div>
                                 <div class="col-6">
@@ -256,36 +237,40 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-xl-3 col-sm-6 col-12" >
+                        <div class="dashboard-summery-one mg-b-20">
+                            <div class="row align-items-center">
+                                <div class="col-6">
+                                    <div class="item-icon bg-light-blue">
+                                        <i class="fas fa-certificate text-blue"></i>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="item-content">
+                                        <div class="item-title">Total Certifications</div>
+                                        <div class="item-number"><span id="certificationCount"></span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <!-- Dashboard summery End Here -->
                 <!-- Dashboard Content Start Here -->
                 <div class="row gutters-20">
-                    <div class="col-12 col-xl-8 col-6-xxxl">
+                    <div class="col-12 col-xl-8 col-9-xxxl">
                         <div class="card dashboard-card-one pd-b-20">
                             <div class="card-body">
                                 <div class="heading-layout1">
                                     <div class="item-title">
-                                        <h3>Earnings</h3>
+                                        <h3>Top Course</h3>
                                     </div>
                                 </div>
                                 <div class="earning-report">
                                     <div class="item-content">
                                         <div class="single-item pseudo-bg-blue">
-                                            <h4>Total Collections</h4>
-                                            <span>75,000</span>
-                                        </div>
-                                        <div class="single-item pseudo-bg-red">
-                                            <h4>Fees Collection</h4>
-                                            <span>15,000</span>
-                                        </div>
-                                    </div>
-                                    <div class="dropdown">
-                                        <a class="date-dropdown-toggle" href="#" role="button" data-toggle="dropdown"
-                                            aria-expanded="false">Jan 20, 2019</a>
-                                        <div class="dropdown-menu dropdown-menu-right">
-                                            <a class="dropdown-item" href="#">Jan 20, 2019</a>
-                                            <a class="dropdown-item" href="#">Jan 20, 2021</a>
-                                            <a class="dropdown-item" href="#">Jan 20, 2020</a>
+                                            <h4>Total Registration</h4>
+                                            <span id="totalRegistrations">5,000+</span>
                                         </div>
                                     </div>
                                 </div>
@@ -295,41 +280,12 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-xl-4 col-3-xxxl">
-                        <div class="card dashboard-card-two pd-b-20">
-                            <div class="card-body">
-                                <div class="heading-layout1">
-                                    <div class="item-title">
-                                        <h3>Expenses</h3>
-                                    </div>
-                                    
-                                </div>
-                                <div class="expense-report">
-                                    <div class="monthly-expense pseudo-bg-Aquamarine">
-                                        <div class="expense-date">Jan 2019</div>
-                                        <div class="expense-amount"><span>$</span> 15,000</div>
-                                    </div>
-                                    <div class="monthly-expense pseudo-bg-blue">
-                                        <div class="expense-date">Feb 2019</div>
-                                        <div class="expense-amount"><span>$</span> 10,000</div>
-                                    </div>
-                                    <div class="monthly-expense pseudo-bg-yellow">
-                                        <div class="expense-date">Mar 2019</div>
-                                        <div class="expense-amount"><span>$</span> 8,000</div>
-                                    </div>
-                                </div>
-                                <div class="expense-chart-wrap">
-                                    <canvas id="expense-bar-chart" width="100" height="300"></canvas>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                     <div class="col-12 col-xl-6 col-3-xxxl">
                         <div class="card dashboard-card-three pd-b-20">
                             <div class="card-body">
                                 <div class="heading-layout1">
                                     <div class="item-title">
-                                        <h3>Students</h3>
+                                        <h3>Total Students</h3>
                                     </div>
                                     <div class="dropdown">
                                         <div class="dropdown-menu dropdown-menu-right">
@@ -348,11 +304,11 @@
                                 <div class="student-report">
                                     <div class="student-count pseudo-bg-blue">
                                         <h4 class="item-title" >Female Students</h4>
-                                        <div class="item-number" id="countFemaleStudents">45,000</div>
+                                        <div class="item-number" id="countFemaleStudents">45</div>
                                     </div>
                                     <div class="student-count pseudo-bg-yellow">
                                         <h4 class="item-title">Male Students</h4>
-                                        <div class="item-number" id="countMaleStudents">1,05,000</div>
+                                        <div class="item-number" id="countMaleStudents">111</div>
                                     </div>
                                 </div>
                             </div>
@@ -363,18 +319,7 @@
                             <div class="card-body">
                                 <div class="heading-layout1">
                                     <div class="item-title">
-                                        <h3>Event Calender</h3>
-                                    </div>
-                                    <div class="dropdown">
-                                       
-                                        <div class="dropdown-menu dropdown-menu-right">
-                                            <a class="dropdown-item" href="#"><i
-                                                    class="fas fa-times text-orange-red"></i>Close</a>
-                                            <a class="dropdown-item" href="#"><i
-                                                    class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
-                                            <a class="dropdown-item" href="#"><i
-                                                    class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
-                                        </div>
+                                        <h3>Stepway Calender</h3>
                                     </div>
                                 </div>
                                 <div class="calender-wrap">
@@ -383,8 +328,6 @@
                             </div>
                         </div>
                     </div>
-                    
-                    
                 </div>
                 <!-- Dashboard Content End Here -->
                 <!-- Social Media Start Here -->
@@ -400,7 +343,6 @@
                                         <h6 class="item-title"><a href="https://www.facebook.com/stepwayBIF"  style="color: aliceblue;" target="_blank">Like us on facebook</a></h6>
                                     </div>
                                 </div>
-                                
                             </div>
                         </div>
                     </div>
@@ -415,7 +357,6 @@
                                         <h6 class="item-title"><a href="https://www.linkedin.com/company/stepwaybif/" style="color: aliceblue;" target="_blank">Follow us on linked</a></h6>
                                     </div>
                                 </div>
-                               
                             </div>
                         </div>
                     </div>

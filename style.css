@@ -3687,7 +3687,7 @@ ul {
   }
 }
 .dashboard-card-one .card-body .earning-report .item-content .single-item span:after {
-  content: "$";
+  content: "";
   font-size: 16px;
   color: #646464;
   font-weight: 500;

@@ -35,6 +35,9 @@
     <script src="js/index1.js"></script>
     <script src="js/singleUserCourses.js"></script>
     <script src="js/loginUserName.js"></script>
+    <script src="js/logout.js"></script>
+    <script src="js/certifications.js"></script>
+
 </head>
 
 <body>
@@ -86,8 +89,8 @@
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
                             
-                            <div class="item-content">
-                                <ul class="settings-list">
+                            <div class="item-content" id="logout">
+                                <ul class="settings-list" onclick="logout()">
                                     <li><a href="index.html"><i class="flaticon-turn-off"></i>Log Out</a></li>
                                 </ul>
                             </div>
@@ -124,7 +127,10 @@
                             <a href="allCourses.html" class="nav-link"><i
                                     class="flaticon-checklist"></i><span>Explore Courses</span></a>
                         </li>
-                       
+                        <li class="nav-item">
+                            <a href="StudentAffiliatedUniversties.html" class="nav-link"><i
+                                    class="flaticon-script"></i><span>Affiliated Institutes</span></a>
+                        </li>
                         <li class="nav-item">
                             <a href="StudentNoticeBoard.html" class="nav-link"><i
                                     class="flaticon-script"></i><span>Notice Board</span></a>
@@ -146,19 +152,19 @@
                 </div>
                 <!-- Breadcubs Area End Here -->
                 <!-- Dashboard summery Start Here -->
-                <div class="row gutters-20">
+                <div class="row gutters-20" style="display: flex; justify-content: center; text-align: center;">
                     <div class="col-xl-3 col-sm-6 col-12">
                         <div class="dashboard-summery-one mg-b-20">
                             <div class="row align-items-center">
                                 <div class="col-6">
-                                    <div class="item-icon bg-light-green">
-                                        <i class="flaticon-classmates text-green"></i>
+                                    <div class="item-icon bg-light-blue">
+                                        <i class="fas fa-book text-green"></i>
                                     </div>
                                 </div>
                                 <div class="col-6">
                                     <div class="item-content">
                                         <div class="item-title">Total Certifications</div>
-                                        <div class="item-number"><span class="counter" data-num="5">5</span></div>
+                                        <div class="item-number"><span id="certificationsCount"></span></div>
                                     </div>
                                 </div>
                             </div>
@@ -169,13 +175,13 @@
                             <div class="row align-items-center">
                                 <div class="col-6">
                                     <div class="item-icon bg-light-blue">
-                                        <i class="flaticon-multiple-users-silhouette text-blue"></i>
+                                        <i class="fas fa-laptop text-blue"></i>
                                     </div>
                                 </div>
                                 <div class="col-6">
                                     <div class="item-content">
                                         <div class="item-title">Courses Enrolled</div>
-                                        <div class="item-number"><span class="counter" data-num="2">2</span></div>
+                                        <div class="item-number"><span id="coursesEnrolledCount"></span></div>
                                     </div>
                                 </div>
                             </div>
@@ -185,8 +191,8 @@
                         <div class="dashboard-summery-one mg-b-20">
                             <div class="row align-items-center">
                                 <div class="col-6">
-                                    <div class="item-icon bg-light-green">
-                                        <i class="bi bi-camera-video-fill"></i>
+                                    <div class="item-icon bg-light-red">
+                                        <i class="bi bi-youtube"></i>
                                     </div>
                                 </div>
                                 <div class="col-6">
@@ -194,8 +200,6 @@
                                         <div class="item-title">
                                             <h4 ><a href="https://www.youtube.com/@STEPWAYBIF/playlists" style="color: #a8a8a8 ;cursor: pointer"   target="_blank">Video Lectures</a></h4>
                                         </div>
-                                        
-                                        
                                     </div>
                                 </div>
                             </div>
@@ -247,13 +251,13 @@
                             <table class="table display data-table text-nowrap">
                                 <thead>
                                     <tr>
+                                        <th>ID </th>
                                         <th>Name</th>
-                                        <th>Description</th>
                                         <th>Earned Date</th>
-                                        <th>Type</th>
+                                        <th>Course ID</th>
                                     </tr>
                                 </thead>
-                                <tbody id="certificationTableBody(will make api later)">
+                                <tbody id="certificationTableBody">
                                 </tbody>
                             </table>
                         </div>

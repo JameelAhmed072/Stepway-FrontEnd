@@ -5,6 +5,8 @@ function fetchWithToken(url, options) {
     if (!token) {
       // If the token is not available, redirect to 'index.html'
       window.location.href = 'index.html';
+       // Return a promise rejection to prevent further execution
+       return Promise.reject('No token found');
     } else {
       // If the token is available, add it to the request headers
       options = options || {};
@@ -12,7 +14,7 @@ function fetchWithToken(url, options) {
       options.headers['Authorization'] = `Bearer ${token}`;
     }
   
-    return fetch(url, options);
+    return originalFetch(url, options);
   }
   
   // Replace the global fetch function with your interceptor

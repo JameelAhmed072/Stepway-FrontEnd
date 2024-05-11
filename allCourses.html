@@ -1,35 +1,217 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html class="no-js" lang="">
+
+
+<!-- Mirrored from www.radiustheme.com/demo/html/psdboss/akkhor/akkhor/all-class.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 05 Oct 2023 17:31:02 GMT -->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Course Catalog</title>
-    <link rel="stylesheet" href="allCourses.css">
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>STEPWAY | All Courses</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="css/all.min.css">
+    <!-- Flaticon CSS -->
+    <link rel="stylesheet" href="fonts/flaticon.css">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="css/animate.min.css">
+    <!-- Data Table CSS -->
+    <link rel="stylesheet" href="css/jquery.dataTables.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Modernize js -->
+    <script src="js/loginUserName.js"></script>
+    <script src="js/allCourses.js"></script>
+    
 </head>
+
 <body>
-
-    <div style="display: inline-block; margin-top: 20px;">
-        <a  href="StudentCourses.html" class="course-enroll-btn">Back</a>
-    </div>
-    <div id="course-container"></div>
-
-    <div class="popup" id="popup">
-        <a href="allCourses.html"><button>close</button></a>
-        <div class="popup-content">
-            <span class="close-btn" onclick="closePopup()">&times;</span>
-            <h2 id="popup-title"></h2>
-            <p id="popup-description"></p>
-            <p id="popup-price"></p>
-            <p id="popup-discount"></p>
-            <p id="popup-start-date"></p>
-            <p id="popup-end-date"></p>
-            <p id="popup-type"></p>
-            <a id="popup-enroll-btn" class="course-enroll-btn"  onclick="enrollCourse()">Enrolll Now</a>
+    <!-- Preloader Start Here -->
+    <div id="preloader"></div>
+    <!-- Preloader End Here -->
+    <div id="wrapper" class="wrapper bg-ash">
+         <!-- Header Menu Area Start Here -->
+        <div class="navbar navbar-expand-md header-menu-one bg-light">
+            <div class="nav-bar-header-one"   style="width:70px; height: 70px;">
+                <div class="header-logo">
+                    <a href="StudentDashboard.html">
+                        <!--img-properties--> <img src="img/Stepway-logo.png" alt="logo" style="margin-left: 5px; width:185px; height: 150px;">
+                     </a>
+                </div>
+                  <div class="toggle-button sidebar-toggle">
+                    <button type="button" class="item-link">
+                        <span class="btn-icon-wrap">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+            <div class="d-md-none mobile-nav-bar">
+               <button class="navbar-toggler pulse-animation" type="button" data-toggle="collapse" data-target="#mobile-navbar" aria-expanded="false">
+                    <i class="far fa-arrow-alt-circle-down"></i>
+                </button>
+                <button type="button" class="navbar-toggler sidebar-toggle-mobile">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <div class="header-main-menu collapse navbar-collapse" id="mobile-navbar">
+                <ul class="navbar-nav">
+                    
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="navbar-item dropdown header-admin">
+                        <a class="navbar-nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                            aria-expanded="false">
+                            <div class="admin-title">
+                                <h5 class="item-title" id="UserName"></h5>
+                                <span>Student</span>
+                            </div>
+                            <div class="admin-img">
+                                <img src="img/figure/admin.jpg" alt="Student">
+                            </div>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <div class="item-content">
+                                <ul class="settings-list">
+                                    <li><a href="index.html"><i class="flaticon-turn-off"></i>Log Out</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
+        <!-- Header Menu Area End Here -->
+        <!-- Page Area Start Here -->
+        <div class="dashboard-page-one">
+            <!-- Sidebar Area Start Here -->
+            <div class="sidebar-main sidebar-menu-one sidebar-expand-md sidebar-color">
+                <div class="mobile-sidebar-header d-md-none">
+                     <div class="header-logo">
+                         <a href="StudentDashboard.html"><img src="img/logo1.png" alt="logo"></a>
+                     </div>
+                </div>
+                 <div class="sidebar-menu-content">
+                     <ul class="nav nav-sidebar-menu sidebar-toggle-view">
+                         
+                         <li class="nav-item ">
+                             <a href="StudentDashboard.html" class="nav-link"><i class="flaticon-dashboard"></i><span>Dashboard</span></a>
+                             
+                         </li>
+                         <li class="nav-item">
+                             <a href="StudentCourses.html" class="nav-link"><i
+                                     class="flaticon-maths-class-materials-cross-of-a-pencil-and-a-ruler"></i><span>My Courses</span></a>
+                             <!-- <ul class="nav sub-group-menu">
+                                 <li class="nav-item">
+                                     <a href="all-class.html" class="nav-link"><i class="fas fa-angle-right"></i>My
+                                         Courses</a>
+                                 </li>
+                                 
+                             </ul> -->
+                         </li>
+                         <li class="nav-item ">
+                             <a href="StudentCertifications.html" class="nav-link"><i class="flaticon-classmates"></i><span>My Certifications</span></a>
+                         </li>
+                         
+                         <li class="nav-item">
+                            <a href="allCourses.html" class="nav-link"><i
+                                    class="flaticon-checklist"></i><span>Explore Courses</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="StudentAffiliatedUniversties.html" class="nav-link"><i
+                                    class="flaticon-script"></i><span>Affiliated Institutes</span></a>
+                        </li>
+                         
+                         <li class="nav-item">
+                             <a href="StudentNoticeBoard.html" class="nav-link"><i
+                                     class="flaticon-script"></i><span>Notice Board</span></a>
+                         </li>
+                     </ul>
+                 </div>
+             </div>
+            <!-- Sidebar Area End Here -->
+            <div class="dashboard-content-one">
+                <!-- Breadcubs Area Start Here -->
+                <div class="breadcrumbs-area">
+                    <h3>Explore Courses</h3>
+                    <ul>
+                        <li>
+                            <a href="StudentDashboard.html">Home</a>
+                        </li>
+                        <li>Available Course</li>
+                    </ul>
+                </div>
+                <!-- Breadcubs Area End Here -->
+                <!-- Class Table Area Start Here -->
+                <div class="card height-auto">
+                    
+                    <div class="card-body">
+                        <div class="heading-layout1">
+                            <div class="item-title">
+                                <h3>Available Course</h3>
+                            </div>
+                           
+                        </div>
+                        
+                        <div class="table-responsive">
+                            <table class="table display data-table text-nowrap">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th>Description</th>
+                                        <th>Discount</th>
+                                        <th>Start Date</th>
+                                        <th>End Date</th>
+                                        <th>Price</th>
+                                        <th>Type</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="availableCoursesTableBody">
 
-<script src="js/allCourses.js"></script>
+                                </tbody>
+                        
+                            </table>
+                            
+                        </div>
+                    </div>
+                </div>
+                <!-- Class Table Area End Here -->
+                <footer class="footer-wrap-layout1">
+                    <div class="copyright">© Copyrights <a href="https://cloudtekkies.com/index.html"  target="_blank">Stepway</a> 2023. All rights reserved. Designed by <a href="#">Jameel & Waji</a></div>
+                </footer>
+            </div>
+        </div>
+        <!-- Page Area End Here -->
+    </div>
+    <!-- jquery-->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <!-- Plugins js -->
+    <script src="js/plugins.js"></script>
+    <!-- Popper js -->
+    <script src="js/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Scroll Up Js -->
+    <script src="js/jquery.scrollUp.min.js"></script>
+    <!-- Data Table Js -->
+    <script src="js/jquery.dataTables.min.js"></script>
+    <!-- Custom Js -->
+    <script src="js/main.js"></script>
 
 </body>
-</html>
 
+
+<!-- Mirrored from www.radiustheme.com/demo/html/psdboss/akkhor/akkhor/all-class.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 05 Oct 2023 17:31:02 GMT -->
+</html>
