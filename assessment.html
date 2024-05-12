@@ -30,24 +30,9 @@
     <!-- Modernize js -->
     <script src="js/loginUserName.js"></script>
     <script src="js/allCourses.js"></script>
-    <script src="js/getAllInstitutes.js"></script>
-
-    <style>
-        .pagination {
-            margin-top: 20px;
-            display: flex;
-            justify-content: right;
-        }
-
-        .pagination button {
-            margin: 0 5px;
-            padding: 8px 12px;
-            color: white;
-            background-color: #ffa601;
-            border-radius: 10px;
-        }
-    </style>
+    
 </head>
+
 <body>
     <!-- Preloader Start Here -->
     <div id="preloader"></div>
@@ -126,6 +111,13 @@
                          <li class="nav-item">
                              <a href="StudentCourses.html" class="nav-link"><i
                                      class="flaticon-maths-class-materials-cross-of-a-pencil-and-a-ruler"></i><span>My Courses</span></a>
+                             <!-- <ul class="nav sub-group-menu">
+                                 <li class="nav-item">
+                                     <a href="all-class.html" class="nav-link"><i class="fas fa-angle-right"></i>My
+                                         Courses</a>
+                                 </li>
+                                 
+                             </ul> -->
                          </li>
                          <li class="nav-item ">
                              <a href="StudentCertifications.html" class="nav-link"><i class="flaticon-classmates"></i><span>My Certifications</span></a>
@@ -139,6 +131,10 @@
                             <a href="StudentAffiliatedUniversties.html" class="nav-link"><i
                                     class="flaticon-script"></i><span>Affiliated Institutes</span></a>
                         </li>
+                        <li class="nav-item">
+                            <a href="assessment.html" class="nav-link"><i
+                                    class="flaticon-script"></i><span>Assessment</span></a>
+                        </li>
                          <li class="nav-item">
                              <a href="StudentNoticeBoard.html" class="nav-link"><i
                                      class="flaticon-script"></i><span>Notice Board</span></a>
@@ -150,12 +146,12 @@
             <div class="dashboard-content-one">
                 <!-- Breadcubs Area Start Here -->
                 <div class="breadcrumbs-area">
-                    <h3>Institutional</h3>
+                    <h3>Explore Courses</h3>
                     <ul>
                         <li>
                             <a href="StudentDashboard.html">Home</a>
                         </li>
-                        <li>All Institutions</li>
+                        <li>Available Course</li>
                     </ul>
                 </div>
                 <!-- Breadcubs Area End Here -->
@@ -165,7 +161,7 @@
                     <div class="card-body">
                         <div class="heading-layout1">
                             <div class="item-title">
-                                <h3>All Institutions Data</h3>
+                                <h3>Available Course</h3>
                             </div>
                            
                         </div>
@@ -175,21 +171,22 @@
                                 <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>Full Name</th>
-                                        <th>Location</th>
+                                        <th>Name</th>
+                                        <th>Description</th>
+                                        <th>Discount</th>
+                                        <th>Start Date</th>
+                                        <th>End Date</th>
+                                        <th>Price</th>
                                         <th>Type</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
-                                <tbody id="InstitutionalTableBody">
+                                <tbody id="availableCoursesTableBody">
 
                                 </tbody>
                         
                             </table>
-                             <!-- Pagination controls -->
-                             <div class="pagination">
-                                <button id="preBtn">Previous</button>
-                                <button id="nextBtn">Next</button>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>

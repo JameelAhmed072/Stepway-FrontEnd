@@ -116,7 +116,6 @@ function allCoursesForTeacher() {
         // Assuming data is an array of student objects
         const tableBody = document.getElementById('teacherCoursesTableBody');
         tableBody.innerHTML = ''; // Clear the table body
-        debugger
         data.forEach(courses => {
             const row = document.createElement('tr');
             row.innerHTML = `

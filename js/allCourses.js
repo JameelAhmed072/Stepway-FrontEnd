@@ -60,7 +60,6 @@ async function renderCourses() {
         card.appendChild(title);
         card.appendChild(description);
         card.appendChild(enrollBtn);
-
         container.appendChild(card);
     });
 }
@@ -124,7 +123,7 @@ function allAvalableCoursesForEnrollment() {
         return response.json();
     })
     .then(data => {
-        console.log("courses : ", data);
+        // console.log("courses : ", data);
         // Assuming data is an array of student objects
         const tableBody = document.getElementById('availableCoursesTableBody');
         tableBody.innerHTML = ''; // Clear the table body
@@ -184,7 +183,7 @@ function handleRegisterCourse(event) {
         return response.json();
     })
     .then(data => {
-        console.log('Course registered successfully:', data);
+        // console.log('Course registered successfully:', data);
         // You can add additional logic here, e.g., showing a success message to the user
 
         allAvalableCoursesForEnrollment();
@@ -193,3 +192,5 @@ function handleRegisterCourse(event) {
         console.error('There was a problem with the POST operation:', error);
     });
 }
+
+

@@ -45,7 +45,7 @@ function allCoursesData() {
     });
 }
 
-
+    
 function fetchStudentCertificationCount() {
     // debugger
     fetch('http://localhost:8080/api/countCurrentUserCertificates',{
